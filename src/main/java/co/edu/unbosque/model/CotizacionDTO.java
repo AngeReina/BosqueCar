@@ -8,24 +8,42 @@ import java.time.LocalDate;
 public class CotizacionDTO {
 
     private int idCotizacion;
-    private Cliente cliente;
-    private Vehiculo vehiculo;
+    private int idCliente;
+    private int idVehiculo;
     private LocalDate fecha;
     private String estado;
+
+    public CotizacionDTO(int idCotizacion, int idCliente, int idVehiculo, LocalDate fecha, String estado) {
+    }
 
     public int getIdCotizacion() {
         return idCotizacion;
     }
-    public Cliente getCliente() {
-        return cliente;
+    public void setIdCotizacion(int idCotizacion) {
+        this.idCotizacion = idCotizacion;
     }
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public int getIdCliente() {
+        return idCliente;
+    }
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+    public int getIdVehiculo() {
+        return idVehiculo;
+    }
+    public void setIdVehiculo(int idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
     public LocalDate getFecha() {
         return fecha;
     }
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
     public String getEstado() {
         return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

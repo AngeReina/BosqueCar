@@ -5,15 +5,15 @@ import java.time.LocalDate;
 public class Cotizacion {
 
     private int idCotizacion;
-    private Cliente cliente;
-    private Vehiculo vehiculo;
+    private int idCliente;
+    private int idVehiculo;
     private LocalDate fecha;
     private String estado;
 
-    public Cotizacion(int  idCotizacion,  Cliente cliente, Vehiculo vehiculo, LocalDate fecha, String estado) {
+    public Cotizacion(int  idCotizacion,  int idCliente, int idVehiculo, LocalDate fecha, String estado) {
         this.idCotizacion = idCotizacion;
-        this.cliente = cliente;
-        this.vehiculo = vehiculo;
+        this.idCliente = idCliente;
+        this.idVehiculo = idVehiculo;
         this.fecha = fecha;
         this.estado = estado;
     }
@@ -23,17 +23,17 @@ public class Cotizacion {
     public void setIdCotizacion(int idCotizacion) {
         this.idCotizacion = idCotizacion;
     }
-    public Cliente getCliente() {
-        return cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public int getIdVehiculo() {
+        return idVehiculo;
     }
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setIdVehiculo(int idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
     public LocalDate getFecha() {
         return fecha;

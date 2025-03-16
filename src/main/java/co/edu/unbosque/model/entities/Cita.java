@@ -5,14 +5,14 @@ import java.time.LocalDate;
 public class Cita {
 
     private int idCita;
-    private Cliente cliente;
+    private int idCliente;
     private LocalDate fecha;
     private String motivo;
     private String estado;
 
-    public Cita(int idCita, Cliente cliente, LocalDate fecha, String motivo, String estado) {
+    public Cita(int idCita, int idClientee, LocalDate fecha, String motivo, String estado) {
         this.idCita = idCita;
-        this.cliente = cliente;
+        this.idCliente = idCliente;
         this.fecha = fecha;
         this.motivo = motivo;
         this.estado = estado;
@@ -23,11 +23,11 @@ public class Cita {
     public void setIdCita(int idCita) {
         this.idCita = idCita;
     }
-    public Cliente getCliente() {
-        return cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     public LocalDate getFecha() {
         return fecha;
