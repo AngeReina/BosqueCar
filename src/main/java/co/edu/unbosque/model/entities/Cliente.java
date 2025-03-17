@@ -7,7 +7,7 @@ public class Cliente {
     private int cedula;
     private String correo;
 
-    public Cliente(String nombre, String apellido, int cedula, String correo) {
+    public Cliente(int nombre, String apellido, String cedula, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;

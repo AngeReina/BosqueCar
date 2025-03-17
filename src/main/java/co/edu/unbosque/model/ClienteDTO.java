@@ -7,6 +7,9 @@ public class ClienteDTO {
     private int cedula;
     private String correo;
 
+    public ClienteDTO(int cedula, String nombre, String apellido, String correo) {
+    }
+
     public String getNombre() {
         return nombre;
     }

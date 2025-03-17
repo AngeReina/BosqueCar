@@ -10,6 +10,9 @@ public class VehiculoDTO {
     private String estado;
     private String disponibilidad;
 
+    public VehiculoDTO(int idVehiculo, String marca, String modelo, int anio, double precio, double kilometraje, String estado, String disponibilidad) {
+    }
+
     public int getIdVehiculo() {
         return idVehiculo;
     }
