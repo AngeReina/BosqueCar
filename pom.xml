@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>BosqueCar</artifactId>
+    <artifactId>EstudiantesBD</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>BosqueCar</name>
+    <name>EstudiantesBD</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>18</maven.compiler.target>
-        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source>
         <junit.version>5.11.0</junit.version>
     </properties>
 
@@ -30,6 +30,24 @@
             <artifactId>primefaces</artifactId>
             <version>14.0.0</version>
             <classifier>jakarta</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core-jakarta</artifactId>
+            <version>5.6.15.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
         <dependency>

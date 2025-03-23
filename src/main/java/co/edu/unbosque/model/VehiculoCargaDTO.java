@@ -6,12 +6,13 @@ public class VehiculoCargaDTO extends  VehiculoDTO {
     private String tipoCombustible;
     private String traccion;
 
-    public VehiculoCargaDTO(int idVehiculo, String marca, String modelo, int anio, double precio, double kilometraje, String estado, String disponibilidad) {
+    public VehiculoCargaDTO(int idVehiculo, String marca, String modelo, int anio, double precio, double kilometraje, String estado, String disponibilidad, double capacidadCarga, String tipoCombustible, String traccion) {
         super(idVehiculo, marca, modelo, anio, precio, kilometraje, estado, disponibilidad);
+        this.capacidadCarga = capacidadCarga;
+        this.tipoCombustible = tipoCombustible;
+        this.traccion = traccion;
     }
-    public double getCapacidadCarga() {
-        return capacidadCarga;
-    }
+    public double getCapacidadCarga() { return capacidadCarga; }
     public void setCapacidadCarga(double capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
     }

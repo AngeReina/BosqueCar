@@ -17,7 +17,7 @@ public class CotizacionMapper implements DataMapper<Cotizacion, CotizacionDTO>{
 
     @Override
     public Cotizacion toEntity(CotizacionDTO dto) {
-        Cliente cliente = new Cliente(dto.getIdCliente(), "","","");
+        Cliente cliente = new Cliente("", "", dto.getCedula(), "correo@desconocido.com");
         Vehiculo vehiculo;
 
         String tipoVehiculo = obtenerTipoVehiculo(dto.getIdVehiculo());

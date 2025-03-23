@@ -1,7 +1,6 @@
 package co.edu.unbosque.model.persistence;
 
 import co.edu.unbosque.model.CitaDTO;
-import co.edu.unbosque.model.CotizacionDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class CitaDAOImpl implements CitaDAO {
     public void insertar(CitaDTO cita) {
         String sql = "INSERT INTO cita (idCliente, fecha, motivo, estado) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
-            stmt.setInt(1, cita.getIdCliente());
+            stmt.setInt(1, cita.getCedula());
             stmt.setDate(2, Date.valueOf(cita.getFecha()));
             stmt.setString(3, cita.getMotivo());
             stmt.setString(4, cita.getEstado());
@@ -72,10 +71,10 @@ public class CitaDAOImpl implements CitaDAO {
     }
 
     @Override
-    public void eliminar(Integer id) {
-        String sql = "DELETE FROM cita WHERE idCliente = ?";
+    public void eliminar(Integer cedula) {
+        String sql = "DELETE FROM cita WHERE cedula = ?";
         try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
-            stmt.setInt(1, id);
+            stmt.setInt(1, cedula);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -108,7 +107,7 @@ public class CitaDAOImpl implements CitaDAO {
     public void actualizar(CitaDTO cita) {
         String sql = "UPDATE cita SET idCliente=?, fecha=?, motivo=?, estado=? WHERE idCita=?";
         try (PreparedStatement stmt = conexion.prepareStatement(sql)){
-            stmt.setInt(1, cita.getIdCliente());
+            stmt.setInt(1, cita.getCedula());
             stmt.setDate(2, Date.valueOf(cita.getFecha()));
             stmt.setString(3, cita.getMotivo());
             stmt.setString(4, cita.getEstado());

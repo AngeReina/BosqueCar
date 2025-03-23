@@ -19,7 +19,6 @@ public class Cita {
         this.estado = estado;
     }
 
-    // Getters y Setters
     public int getIdCita() { return idCita; }
     public void setIdCita(int idCita) { this.idCita = idCita; }
 
@@ -35,7 +34,7 @@ public class Cita {
     public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
 
-    public int getIdCliente() {
+    public int getCedula() {
         return (cliente != null) ? cliente.getCedula() : 0; // Evita errores si cliente es null
     }
 }

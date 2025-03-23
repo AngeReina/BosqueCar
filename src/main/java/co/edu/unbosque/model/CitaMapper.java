@@ -18,7 +18,8 @@ public class CitaMapper implements DataMapper<Cita, CitaDTO> {
 
     @Override
     public Cita toEntity(CitaDTO dto) {
-        Cliente cliente = new Cliente(dto.getIdCliente(), "", "", "");
+        Cliente cliente = new Cliente("", "", dto.getCedula(), "");
+
 
         return new Cita(
                 dto.getIdCita(),

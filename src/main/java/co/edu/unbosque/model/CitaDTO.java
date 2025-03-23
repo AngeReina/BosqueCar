@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 public class CitaDTO {
     private int idCita;
-    private int idCliente;
+    private int cedula;
     private LocalDate fecha;
     private String motivo;
     private String estado;
 
-    public CitaDTO(int idCita, int idCliente, LocalDate fecha, String motivo, String estado) {
+    public CitaDTO(int idCita, int cedula, LocalDate fecha, String motivo, String estado) {
         this.idCita = idCita;
-        this.idCliente = idCliente;
+        this.cedula = cedula;
         this.fecha = fecha;
         this.motivo = motivo;
         this.estado = estado;
@@ -20,8 +20,8 @@ public class CitaDTO {
     public int getIdCita() { return idCita; }
     public void setIdCita(int idCita) { this.idCita = idCita; }
 
-    public int getIdCliente() { return idCliente; }
-    public void setIdCliente(int idCliente) { this.idCliente = idCliente; }
+    public int getCedula() { return cedula; }
+    public void setIdCliente(int idCliente) { this.cedula = idCliente; }
 
     public LocalDate getFecha() { return fecha; }
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }

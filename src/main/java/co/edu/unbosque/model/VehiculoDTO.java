@@ -11,6 +11,14 @@ public class VehiculoDTO {
     private String disponibilidad;
 
     public VehiculoDTO(int idVehiculo, String marca, String modelo, int anio, double precio, double kilometraje, String estado, String disponibilidad) {
+        this.idVehiculo = idVehiculo;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+        this.precio = precio;
+        this.kilometraje = kilometraje;
+        this.estado = estado;
+        this.disponibilidad = disponibilidad;
     }
 
     public int getIdVehiculo() {

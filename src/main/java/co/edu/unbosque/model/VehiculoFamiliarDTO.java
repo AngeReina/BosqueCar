@@ -9,9 +9,7 @@ public class VehiculoFamiliarDTO  extends  VehiculoDTO {
     public VehiculoFamiliarDTO(int idVehiculo, String marca, String modelo, int anio, double precio, double kilometraje, String estado, String disponibilidad) {
         super(idVehiculo, marca, modelo, anio, precio, kilometraje, estado, disponibilidad);
     }
-    public int getCapacidadPasajeros() {
-        return capacidadPasajeros;
-    }
+    public int getCapacidadPasajeros() { return capacidadPasajeros; }
     public void setCapacidadPasajeros(int capacidadPasajeros) {
         this.capacidadPasajeros = capacidadPasajeros;
     }

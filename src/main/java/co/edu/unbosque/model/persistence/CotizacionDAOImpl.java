@@ -18,7 +18,7 @@ public class CotizacionDAOImpl implements CotizacionDAO {
     public void insertar(CotizacionDTO cotizacion) {
         String sql ="INSERT INTO cotizacion (idCliente, idVehiculo, fecha, estadp) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setInt(1, cotizacion.getIdCliente());
+            stmt.setInt(1, cotizacion.getCedula());
             stmt.setInt(2, cotizacion.getIdVehiculo());
             stmt.setDate(3, Date.valueOf(cotizacion.getFecha()));
             stmt.setString(4, cotizacion.getEstado());
@@ -74,7 +74,7 @@ public class CotizacionDAOImpl implements CotizacionDAO {
     public void actualizar(CotizacionDTO cotizacion) {
         String sql = "UPDATE cotizacion SET idCliente =?, idVehiculo =?, fecha =?, estado =? WHERE idCotizacion =?";
         try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
-            stmt.setInt(1, cotizacion.getIdCliente());
+            stmt.setInt(1, cotizacion.getCedula());
             stmt.setInt(2, cotizacion.getIdVehiculo());
             stmt.setDate(3, Date.valueOf(cotizacion.getFecha()));
             stmt.setString(4, cotizacion.getEstado());

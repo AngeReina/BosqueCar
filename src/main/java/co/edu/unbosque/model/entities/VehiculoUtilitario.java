@@ -16,11 +16,11 @@ public class VehiculoUtilitario extends Vehiculo {
     public void setTamanoMaletero(double tamanoMaletero) {
         this.tamanoMaletero = tamanoMaletero;
     }
-    public String getEquipamentoEspecial() {
+    public String getEquipamientoEspecial() {
         return equipamientoEspecial;
     }
-    public void setEquipamentoEspecial(String equipamentoEspecial) {
-        this.equipamientoEspecial = equipamentoEspecial;
+    public void setEquipamientoEspecial(String equipamientoEspecial) {
+        this.equipamientoEspecial = equipamientoEspecial;
     }
 
     @Override

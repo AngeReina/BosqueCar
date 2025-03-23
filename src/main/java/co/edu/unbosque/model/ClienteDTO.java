@@ -7,7 +7,11 @@ public class ClienteDTO {
     private int cedula;
     private String correo;
 
-    public ClienteDTO(int cedula, String nombre, String apellido, String correo) {
+    public ClienteDTO(String nombre, String apellido,int cedula, String correo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.correo = correo;
     }
 
     public String getNombre() {
@@ -19,7 +23,5 @@ public class ClienteDTO {
     public int getCedula() {
         return cedula;
     }
-    public String getCorreo() {
-        return correo;
-    }
+    public String getCorreo() { return correo; }
 }
