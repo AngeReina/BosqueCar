@@ -1,40 +1,91 @@
 package co.edu.unbosque.model.entities;
 
-import co.edu.unbosque.model.entities.Cliente;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
-import java.time.LocalDate;
-
+@Entity
+@Table(name = "cita")
 public class Cita {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cita")
     private int idCita;
+
+    @ManyToOne
+    @JoinColumn(name = "cedula", nullable = false)
     private Cliente cliente;
-    private LocalDate fecha;
+
+    @ManyToOne
+    @JoinColumn(name = "id_vehiculo", nullable = false)
+    private Vehiculo vehiculo;
+
+    @Column(name = "fecha", nullable = false)
+    private LocalDateTime fecha;
+
+    @Column(name = "motivo", nullable = false)
     private String motivo;
+
+    @Column(name = "estado", nullable = false)
     private String estado;
 
-    public Cita(int idCita, Cliente cliente, LocalDate fecha, String motivo, String estado) {
+    public Cita() {}
+
+    public Cita(int idCita, Cliente cliente, Vehiculo vehiculo, LocalDateTime fecha, String motivo, String estado) {
         this.idCita = idCita;
         this.cliente = cliente;
+        this.vehiculo = vehiculo;
         this.fecha = fecha;
         this.motivo = motivo;
         this.estado = estado;
     }
 
-    public int getIdCita() { return idCita; }
-    public void setIdCita(int idCita) { this.idCita = idCita; }
+    // Getters y setters
+    public int getIdCita() {
+        return idCita;
+    }
 
-    public Cliente getCliente() { return cliente; }
-    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+    public void setIdCita(int idCita) {
+        this.idCita = idCita;
+    }
 
-    public LocalDate getFecha() { return fecha; }
-    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
+    public Cliente getCliente() {
+        return cliente;
+    }
 
-    public String getMotivo() { return motivo; }
-    public void setMotivo(String motivo) { this.motivo = motivo; }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
 
-    public int getCedula() {
-        return (cliente != null) ? cliente.getCedula() : 0; // Evita errores si cliente es null
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

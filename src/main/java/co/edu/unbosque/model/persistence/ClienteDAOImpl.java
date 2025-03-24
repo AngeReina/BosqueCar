@@ -36,9 +36,9 @@ public class ClienteDAOImpl implements ClienteDAO{
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
                 return new Cliente(
+                        rs.getInt("cedula"),
                         rs.getString("nombre"),
                         rs.getString("apellido"),
-                        rs.getInt("cedula"),
                         rs.getString("correo")
                 );
             }
@@ -56,9 +56,9 @@ public class ClienteDAOImpl implements ClienteDAO{
             ResultSet rs = stmt.executeQuery(sql)){
            while(rs.next()){
                cliente.add(new Cliente(
+                       rs.getInt("cedula"),
                        rs.getString("nombre"),
                        rs.getString("apellido"),
-                       rs.getInt("cedula"),
                        rs.getString("correo")
                ));
            }
@@ -103,9 +103,9 @@ public class ClienteDAOImpl implements ClienteDAO{
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
                 cliente.add(new Cliente(
+                        rs.getInt("cedula"),
                         rs.getString("nombre"),
                         rs.getString("apellido"),
-                        rs.getInt("cedula"),
                         rs.getString("correo")
                 ));
             }

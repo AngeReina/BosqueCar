@@ -1,35 +1,71 @@
 package co.edu.unbosque.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CitaDTO {
     private int idCita;
     private int cedula;
-    private LocalDate fecha;
+    private int idVehiculo;
+    private LocalDateTime fecha;
     private String motivo;
     private String estado;
 
-    public CitaDTO(int idCita, int cedula, LocalDate fecha, String motivo, String estado) {
+    // Constructor
+    public CitaDTO(int idCita, int cedula, int idVehiculo, LocalDateTime fecha, String motivo, String estado) {
         this.idCita = idCita;
         this.cedula = cedula;
+        this.idVehiculo = idVehiculo;
         this.fecha = fecha;
         this.motivo = motivo;
         this.estado = estado;
     }
 
-    public int getIdCita() { return idCita; }
-    public void setIdCita(int idCita) { this.idCita = idCita; }
+    // Getters y setters
+    public int getIdCita() {
+        return idCita;
+    }
 
-    public int getCedula() { return cedula; }
-    public void setIdCliente(int idCliente) { this.cedula = idCliente; }
+    public void setIdCita(int idCita) {
+        this.idCita = idCita;
+    }
 
-    public LocalDate getFecha() { return fecha; }
-    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
+    public int getCedula() {
+        return cedula;
+    }
 
-    public String getMotivo() { return motivo; }
-    public void setMotivo(String motivo) { this.motivo = motivo; }
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public int getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(int idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }
-

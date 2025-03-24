@@ -18,9 +18,9 @@ public class ClienteMapper implements DataMapper<Cliente, ClienteDTO> {
     @Override
     public Cliente toEntity(ClienteDTO dto) {
         return new Cliente(
+                dto.getCedula(),
                 dto.getNombre(),
                 dto.getApellido(),
-                dto.getCedula(),
                 dto.getCorreo()
         );
     }

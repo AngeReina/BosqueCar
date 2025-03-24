@@ -4,6 +4,6 @@ import co.edu.unbosque.model.entities.Vehiculo;
 
 import java.util.List;
 
-public interface VehiculoDAO <T extends Vehiculo> extends DAO<T, Integer> {
-    List<T> buscarPorMarca(String marca);
+public interface VehiculoDAO extends DAO<Vehiculo, Integer> {
+    List<Vehiculo> buscarPorMarca(String marca);
 }

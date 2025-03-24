@@ -1,9 +1,7 @@
 package co.edu.unbosque.model;
 
 import co.edu.unbosque.model.entities.Vehiculo;
-import co.edu.unbosque.model.entities.VehiculoCarga;
-import co.edu.unbosque.model.entities.VehiculoFamiliar;
-import co.edu.unbosque.model.entities.VehiculoUtilitario;
+import co.edu.unbosque.model.entities.Categoria;
 
 public class VehiculoMapper implements DataMapper<Vehiculo, VehiculoDTO> {
 
@@ -11,64 +9,48 @@ public class VehiculoMapper implements DataMapper<Vehiculo, VehiculoDTO> {
     public VehiculoDTO toDTO(Vehiculo vehiculo) {
         return new VehiculoDTO(
                 vehiculo.getIdVehiculo(),
+                vehiculo.getPlaca(),
                 vehiculo.getMarca(),
                 vehiculo.getModelo(),
                 vehiculo.getAnio(),
                 vehiculo.getPrecio(),
                 vehiculo.getKilometraje(),
                 vehiculo.getEstado(),
-                vehiculo.getDisponibilidad()
-                );
+                vehiculo.getDisponibilidad(),
+                vehiculo.getCategoria().getIdCategoria(),
+                vehiculo.getCapacidadCarga(),
+                vehiculo.getTipoCombustible(),
+                vehiculo.getTraccion(),
+                vehiculo.getCapacidadPasajeros(),
+                vehiculo.getSistemaSeguridad(),
+                vehiculo.getConfort(),
+                vehiculo.getTamanoMaletero(),
+                vehiculo.getEquipamientoEspecial()
+        );
     }
 
     @Override
     public Vehiculo toEntity(VehiculoDTO dto) {
-        if (dto instanceof  VehiculoCargaDTO){
-            VehiculoCargaDTO cargaDTO = (VehiculoCargaDTO) dto;
-            return new VehiculoCarga(
-                    cargaDTO.getIdVehiculo(),
-                    cargaDTO.getMarca(),
-                    cargaDTO.getModelo(),
-                    cargaDTO.getAnio(),
-                    cargaDTO.getPrecio(),
-                    cargaDTO.getKilometraje(),
-                    cargaDTO.getEstado(),
-                    cargaDTO.getDisponibilidad(),
-                    cargaDTO.getCapacidadCarga(),
-                    cargaDTO.getTipoCombustible(),
-                    cargaDTO.getTraccion()
-            );
-        } else if( dto instanceof VehiculoFamiliarDTO) {
-            VehiculoFamiliarDTO familiarDTO = (VehiculoFamiliarDTO) dto;
-            return new VehiculoFamiliar(
-                    familiarDTO.getIdVehiculo(),
-                    familiarDTO.getMarca(),
-                    familiarDTO.getModelo(),
-                    familiarDTO.getAnio(),
-                    familiarDTO.getPrecio(),
-                    familiarDTO.getKilometraje(),
-                    familiarDTO.getEstado(),
-                    familiarDTO.getDisponibilidad(),
-                    familiarDTO.getCapacidadPasajeros(),
-                    familiarDTO.getSistemaSeguridad(),
-                    familiarDTO.getConfort()
-            );
-        }else if (dto instanceof VehiculoUtilitarioDTO){
-            VehiculoUtilitarioDTO utilitarioDTO = (VehiculoUtilitarioDTO) dto;
-            return new VehiculoUtilitario(
-                    utilitarioDTO.getIdVehiculo(),
-                    utilitarioDTO.getMarca(),
-                    utilitarioDTO.getModelo(),
-                    utilitarioDTO.getAnio(),
-                    utilitarioDTO.getPrecio(),
-                    utilitarioDTO.getKilometraje(),
-                    utilitarioDTO.getEstado(),
-                    utilitarioDTO.getDisponibilidad(),
-                    utilitarioDTO.getTamanoMaletero(),
-                    utilitarioDTO.getEquipamientoEspecial()
-            );
-        } else {
-            throw new IllegalArgumentException("Tipo de vehículo desconocido");
-        }
+        Categoria categoria = new Categoria(dto.getIdCategoria(), "Desconocida"); // Asigna una categoría por defecto
+        return new Vehiculo(
+                dto.getIdVehiculo(),
+                dto.getPlaca(),
+                dto.getMarca(),
+                dto.getModelo(),
+                dto.getAnio(),
+                dto.getPrecio(),
+                dto.getKilometraje(),
+                Vehiculo.Estado.valueOf(dto.getEstado().name()),
+                Vehiculo.Disponibilidad.valueOf(dto.getDisponibilidad().name()),
+                categoria,
+                dto.getCapacidadCarga(),
+                dto.getTipoCombustible(),
+                dto.getTraccion(),
+                dto.getCapacidadPasajeros(),
+                dto.getSistemaSeguridad(),
+                dto.getConfort(),
+                dto.getTamanoMaletero(),
+                dto.getEquipamientoEspecial()
+        );
     }
 }
