@@ -1,7 +1,6 @@
 package co.edu.unbosque.model.persistence;
 
 import co.edu.unbosque.model.CitaDTO;
-import co.edu.unbosque.model.CotizacionDTO;
 
 import java.util.List;
 
